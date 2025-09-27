@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AnimatorParameterSetter : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
+    [SerializeField] protected Animator animator;
 
     public void SetFloatParameter(string key, float value)
     {

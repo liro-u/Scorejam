@@ -247,6 +247,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2015353102022623429, guid: 53186c237d62d324086825c4abb38343, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2528448385935338605}
+    - targetCorrespondingSourceObject: {fileID: 2015353102022623429, guid: 53186c237d62d324086825c4abb38343, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 60395046244034488}
   m_SourcePrefab: {fileID: 100100000, guid: 53186c237d62d324086825c4abb38343, type: 3}
 --- !u!4 &1718177279968713038 stripped
 Transform:
@@ -332,13 +335,37 @@ MonoBehaviour:
   healthEmpty:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3039402641954791851}
-        m_TargetAssemblyTypeName: GameObjectRemover, Assembly-CSharp
-        m_MethodName: Remove
-        m_Mode: 2
+      - m_Target: {fileID: 2528448385935338605}
+        m_TargetAssemblyTypeName: EnemyAnimatorSetter, Assembly-CSharp
+        m_MethodName: SetIsDead
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 8142132507684893547}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4666408159510181085}
+        m_TargetAssemblyTypeName: TargetMovementController, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 60395046244034488}
+        m_TargetAssemblyTypeName: WaitForCallBack, Assembly-CSharp
+        m_MethodName: StartCallbackCoRoutine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -434,3 +461,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   animator: {fileID: 4739850127517779139}
+  onDeathAnimationStart:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &60395046244034488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142132507684893547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2027a93f78fedd5478d6b0fd4172fb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  waitFor: 1
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3039402641954791851}
+        m_TargetAssemblyTypeName: GameObjectRemover, Assembly-CSharp
+        m_MethodName: Remove
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8142132507684893547}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
