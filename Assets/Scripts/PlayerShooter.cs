@@ -2,15 +2,26 @@ using UnityEngine;
 
 public class PlayerShooter : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("Projectile Settings")]
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform shootPoint;     // Where the projectile spawns
+    [SerializeField] private Transform projectileParent; // Where the projectile is parented
 
-    // Update is called once per frame
-    void Update()
+    [Header("Projectile Parameters")]
+    [SerializeField] private float projectileSpeed = 10f;
+
+    public void Shoot()
     {
-        
+        if (projectilePrefab == null || shootPoint == null) return;
+
+        // Instantiate projectile
+        GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation, projectileParent);
+
+        // Give it forward velocity if it has a Rigidbody
+        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = shootPoint.forward * projectileSpeed;
+        }
     }
 }
