@@ -16,9 +16,10 @@ public class OnTriggerManager2D : MonoBehaviour
         if (!string.IsNullOrEmpty(requiredTag) && !other.CompareTag(requiredTag))
             return;
 
-        // Layer filter (skip if not in mask)
-        if ((requiredLayers.value & (1 << other.gameObject.layer)) == 0)
+        // Only filter if the mask is not empty
+        if (requiredLayers.value != 0 && (requiredLayers.value & (1 << other.gameObject.layer)) == 0)
             return;
+
 
         // Invoke event, passing the other object
         onTriggerEnter?.Invoke(other.gameObject);

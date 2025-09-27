@@ -20,7 +20,6 @@ public class HealthSystem : MonoBehaviour
     {
         CurrentHealth += healthModifier;
         healthChanged.Invoke(CurrentHealth);
-        Debug.Log("Health : " + CurrentHealth);
 
         if (healthModifier > 0)
         {

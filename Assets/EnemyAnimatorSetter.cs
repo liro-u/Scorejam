@@ -13,7 +13,6 @@ public class EnemyAnimatorSetter : AnimatorParameterSetter
 
     public void SetIsDead(bool value)
     {
-        Debug.Log(value);
         SetBoolParameter("isDead", value);
         onDeathAnimationStart.Invoke();
     }
