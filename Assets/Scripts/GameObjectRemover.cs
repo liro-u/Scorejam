@@ -6,6 +6,7 @@ public class GameObjectRemover : MonoBehaviour
     {
         if (target != null)
         {
+            Debug.Log(target);
             Destroy(target);
         }
     }
