@@ -4,9 +4,10 @@ using UnityEngine.AI;
 public class TargetMovementController : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    NavMeshAgent agent; 
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private MovementSystem movementSystem;
+
+    private NavMeshAgent agent;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -14,9 +15,15 @@ public class TargetMovementController : MonoBehaviour
         agent.updateUpAxis = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         agent.SetDestination(target.position);
+
+        Vector2 moveInput = new Vector2(agent.velocity.x, agent.velocity.y);
+
+        if (moveInput.magnitude > 1f)
+            moveInput.Normalize();
+
+        movementSystem.MoveInput = moveInput;
     }
 }

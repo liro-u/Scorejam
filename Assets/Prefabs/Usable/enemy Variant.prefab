@@ -237,14 +237,25 @@ PrefabInstance:
       addedObject: {fileID: 3039402641954791851}
     - targetCorrespondingSourceObject: {fileID: 2015353102022623429, guid: 53186c237d62d324086825c4abb38343, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 6912460270607425456}
+    - targetCorrespondingSourceObject: {fileID: 2015353102022623429, guid: 53186c237d62d324086825c4abb38343, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 4666408159510181085}
     - targetCorrespondingSourceObject: {fileID: 2015353102022623429, guid: 53186c237d62d324086825c4abb38343, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2618208354729089296}
+    - targetCorrespondingSourceObject: {fileID: 2015353102022623429, guid: 53186c237d62d324086825c4abb38343, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2528448385935338605}
   m_SourcePrefab: {fileID: 100100000, guid: 53186c237d62d324086825c4abb38343, type: 3}
 --- !u!4 &1718177279968713038 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8994079562360105696, guid: 53186c237d62d324086825c4abb38343, type: 3}
+  m_PrefabInstance: {fileID: 7712786647854461870}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4739850127517779139 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3084409407282624365, guid: 53186c237d62d324086825c4abb38343, type: 3}
   m_PrefabInstance: {fileID: 7712786647854461870}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8142132507684893547 stripped
@@ -266,7 +277,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovementSystem
   moveSpeed: 5
   rb: {fileID: 4430348947650766767}
-  moveInput: {x: 0, y: 0}
+  onMove:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!50 &4430348947650766767
 Rigidbody2D:
   serializedVersion: 5
@@ -343,6 +356,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f538b8ac0b30c68499f239a500ce3fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameObjectRemover
+--- !u!114 &6912460270607425456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142132507684893547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108f785627f8ad942abe0cdc2650cea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovementSystem
+  moveSpeed: 5
+  rb: {fileID: 4430348947650766767}
+  onMove:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2528448385935338605}
+        m_TargetAssemblyTypeName: EnemyAnimatorSetter, Assembly-CSharp
+        m_MethodName: SetIsMoving
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4666408159510181085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   target: {fileID: 0}
+  movementSystem: {fileID: 6912460270607425456}
 --- !u!195 &2618208354729089296
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -378,3 +421,16 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2528448385935338605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142132507684893547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c553b3c865b5a774fb437480759d071d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  animator: {fileID: 4739850127517779139}
