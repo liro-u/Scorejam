@@ -18,10 +18,10 @@ public class PlayerShooter : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation, projectileParent);
 
         // Give it forward velocity if it has a Rigidbody
-        Rigidbody rb = projectile.GetComponent<Rigidbody>();
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = shootPoint.forward * projectileSpeed;
+            rb.linearVelocity = shootPoint.right * projectileSpeed;
         }
     }
 }
