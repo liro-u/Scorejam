@@ -5,7 +5,7 @@ public class MovementSystem : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private Rigidbody2D rb;
-    public Vector2 moveInput;
+    public Vector2 moveInput = Vector2.zero;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
