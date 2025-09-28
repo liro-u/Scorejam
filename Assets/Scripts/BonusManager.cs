@@ -40,7 +40,7 @@ public class BonusManager : MonoBehaviour
         switch(bonusNumber)
         {
             case (int)BonusType.Points:
-                ScoreManager.Instance.AddScore(1000);
+                ScoreManager.Instance.AddScore(10000);
                 break;
 
             case (int)BonusType.Heal:
