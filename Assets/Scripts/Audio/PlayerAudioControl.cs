@@ -46,6 +46,6 @@ public class PlayerAudioControl : MonoBehaviour
 
     public void PlayRandomFromGroup(AudioClip[] group)
     {
-        audioSrc.PlayOneShot(group[Random.Range(0, group.Length)], .5f);
+        audioSrc.PlayOneShot(group[Random.Range(0, group.Length)], .7f);
     }
 }

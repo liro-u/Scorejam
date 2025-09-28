@@ -12,7 +12,10 @@ public class InputSystemCallbackSpecifier : MonoBehaviour
     public void OnInputAction(InputAction.CallbackContext context)
     {
         if (context.started)
+        {
             onStarted?.Invoke();
+            GetComponent<PlayerAudioControl>().PlayPlayerSound(1);
+        }
         else if (context.performed)
             onPerformed?.Invoke();
         else if (context.canceled)
