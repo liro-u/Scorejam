@@ -61,6 +61,13 @@ public class Room : MonoBehaviour
         onRoomStart.Invoke();
     }
 
+    public void FinishRoom()
+    {
+        
+        OpenAllDoor();
+        hasFinishRoom = true;
+    }
+
     public void SummonEnemy()
     {
         EnemyParent.SetActive(true);
