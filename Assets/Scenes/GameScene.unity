@@ -1218,6 +1218,10 @@ PrefabInstance:
       propertyPath: m_ExcludeLayers.m_Bits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2758936187011976005, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4045335375125802499, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
       propertyPath: projectileParent
       value: 

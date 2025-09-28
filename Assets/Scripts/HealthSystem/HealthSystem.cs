@@ -18,6 +18,7 @@ public class HealthSystem : MonoBehaviour
     public float CurrentHealth { get; private set; }
 
     private float invincibilityTimer = 0f;
+    private float protectForTimer = 0f;
 
     private void Start()
     {
@@ -31,12 +32,27 @@ public class HealthSystem : MonoBehaviour
         {
             invincibilityTimer -= Time.deltaTime;
         }
+
+        // Count down invincibility timer if active
+        if (protectForTimer > 0f)
+        {
+            protectForTimer -= Time.deltaTime;
+        }
+    }
+
+    public void ProtectForXTime(float protectDuration)
+    {
+        // Start i-frames if enabled
+        if (protectDuration > 0f)
+        {
+            protectForTimer = protectDuration;
+        }
     }
 
     public void ApplyHealthModifier(float healthModifier)
     {
         // If taking damage but still invincible, ignore
-        if (healthModifier < 0 && invincibilityTimer > 0f)
+        if (healthModifier < 0 && (invincibilityTimer > 0f || protectForTimer > 0f))
         {
             return;
         }

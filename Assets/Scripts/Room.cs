@@ -2,6 +2,9 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
+using UnityEngine.InputSystem;
+
 
 public class Room : MonoBehaviour
 {
@@ -58,7 +61,27 @@ public class Room : MonoBehaviour
     public void StartRoom()
     {
         if (hasFinishRoom) return;
+        StartCoroutine(StartRoomCoroutine());
+    }
+
+    private IEnumerator StartRoomCoroutine()
+    {
         CloseAllDoor();
+
+        yield return new WaitForSeconds(2);
+
+        Player.Instance.GetComponent<PlayerAnimatorSetter>().SetIsRolling(true);
+        Player.Instance.GetComponent<PlayerInput>().enabled = false;
+
+        yield return new WaitForSeconds(2);
+
+        Player.Instance.GetComponent<PlayerAnimatorSetter>().SetIsRolling(false);
+        Player.Instance.GetComponent<PlayerInput>().enabled = true;
+
+        yield return new WaitForSeconds(2);
+
+        Player.Instance.GetComponent<HealthSystem>().ProtectForXTime(5);
+
         onRoomStart.Invoke();
     }
 

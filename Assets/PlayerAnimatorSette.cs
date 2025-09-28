@@ -11,4 +11,9 @@ public class PlayerAnimatorSetter : AnimatorParameterSetter
     {
         SetBoolParameter("isDead", value);
     }
+
+    public void SetIsRolling(bool value)
+    {
+        SetBoolParameter("isRolling", value);
+    }
 }
