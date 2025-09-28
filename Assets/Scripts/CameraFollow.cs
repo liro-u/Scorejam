@@ -32,7 +32,6 @@ public class CameraFollow : MonoBehaviour
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;
-        Debug.Log("focus cam");
 
     }
 }
