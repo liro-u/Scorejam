@@ -7,7 +7,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private UnityEvent<float> healthChanged;
     [SerializeField] private UnityEvent<float> healthIncrease;
     [SerializeField] private UnityEvent<float> healthDecrease;
-    [SerializeField] private UnityEvent<float> healthEmpty;
+    [SerializeField] private UnityEvent<bool> healthEmpty;
 
     public float CurrentHealth { get; private set; }
 
@@ -20,7 +20,6 @@ public class HealthSystem : MonoBehaviour
     {
         CurrentHealth += healthModifier;
         healthChanged.Invoke(CurrentHealth);
-        Debug.Log("Health : " + CurrentHealth);
 
         if (healthModifier > 0)
         {
@@ -33,7 +32,7 @@ public class HealthSystem : MonoBehaviour
 
         if (CurrentHealth <= 0)
         {
-            healthEmpty.Invoke(CurrentHealth);
+            healthEmpty.Invoke(true);
         }
     }
 }
