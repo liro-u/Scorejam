@@ -1,0 +1,28 @@
+:root {
+}
+
+.menu {
+    background-color: rgb(0, 0, 0);
+}
+
+.button {
+    flex-grow: 1;
+    align-items: center;
+    width: 413px;
+    height: 60px;
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+    -unity-font-definition: url("project://database/Assets/TextMesh%20Pro/Fonts/LakkiReddy-Regular.ttf?fileID=12800000&guid=774a9e7a3661c00419d47cdc4a81904a&type=3#LakkiReddy-Regular");
+    font-size: 32px;
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.unity-button:hover {
+}

@@ -6,4 +6,9 @@ public class PlayerAnimatorSetter : AnimatorParameterSetter
     {
         SetBoolParameter("isMoving", value);
     }
+
+    public void SetIsDead(bool value)
+    {
+        SetBoolParameter("isDead", value);
+    }
 }
