@@ -61,6 +61,7 @@ public class RoomGenerator : MonoBehaviour
             if (firstRoom)
             {
                 roomComp.hasFinishRoom = true;
+                roomComp.FocusCamera();
                 firstRoom = false;
             }
 

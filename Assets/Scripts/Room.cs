@@ -18,6 +18,7 @@ public class Room : MonoBehaviour
     [SerializeField] private Door BottomDoor;
 
     [SerializeField] private EnemyParent EnemyParent;
+    [SerializeField] private Transform CameraTarget;
 
     [SerializeField] public bool hasFinishRoom = false;
 
@@ -72,5 +73,10 @@ public class Room : MonoBehaviour
         if (hasFinishRoom) return;
         EnemyParent.SummonRandomEnemies(numberEnemy);
         hasFinishRoom = true;
+    }
+
+    public void FocusCamera()
+    {
+        CameraFollow.Instance.SetTarget(CameraTarget);
     }
 }
