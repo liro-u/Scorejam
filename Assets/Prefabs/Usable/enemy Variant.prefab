@@ -346,6 +346,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2015353102022623429, guid: 53186c237d62d324086825c4abb38343, type: 3}
       insertIndex: -1
       addedObject: {fileID: 546071398003785594}
+    - targetCorrespondingSourceObject: {fileID: 2015353102022623429, guid: 53186c237d62d324086825c4abb38343, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 556050232657794800}
   m_SourcePrefab: {fileID: 100100000, guid: 53186c237d62d324086825c4abb38343, type: 3}
 --- !u!4 &1718177279968713038 stripped
 Transform:
@@ -496,6 +499,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3339492069915087723}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 556050232657794800}
+        m_TargetAssemblyTypeName: ScoreModifier, Assembly-CSharp
+        m_MethodName: AddPoints
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -743,3 +758,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f28c67dc691c89246af7233119572d5a, type: 3}
   fireSounds: []
   walkSounds: []
+--- !u!114 &556050232657794800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142132507684893547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a2f510bd2f87c44c95966fc6123fe73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreModifier
+  pointsToAdd: 100

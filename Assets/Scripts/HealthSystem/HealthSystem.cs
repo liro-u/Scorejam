@@ -18,7 +18,13 @@ public class HealthSystem : MonoBehaviour
 
     public void ApplyHealthModifier(float healthModifier)
     {
+        float oldHealth = CurrentHealth;
         CurrentHealth += healthModifier;
+        CurrentHealth = Mathf.Max(0, CurrentHealth);
+
+        if (CurrentHealth != oldHealth)
+        {
+
         healthChanged.Invoke(CurrentHealth);
 
         if (healthModifier > 0)
@@ -33,6 +39,7 @@ public class HealthSystem : MonoBehaviour
         if (CurrentHealth <= 0)
         {
             healthEmpty.Invoke(true);
+        }
         }
     }
 }

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 556050232657794800, guid: 55771a0162f6df94fb49b089b5716482, type: 3}
+      propertyPath: pointsToAdd
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 1718177279968713038, guid: 55771a0162f6df94fb49b089b5716482, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -75,6 +79,10 @@ PrefabInstance:
     - target: {fileID: 8142132507684893547, guid: 55771a0162f6df94fb49b089b5716482, type: 3}
       propertyPath: m_Name
       value: enemy Medium Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9104369842302351663, guid: 55771a0162f6df94fb49b089b5716482, type: 3}
+      propertyPath: pointsToAdd
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

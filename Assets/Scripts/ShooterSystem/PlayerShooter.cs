@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class PlayerShooter : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private float projectileSpeed = 10f;
     [SerializeField] private float shootInterval = 0.5f;
 
+
+    [SerializeField] private UnityEvent onShoot;
+    
     private bool isShooting = false;
     private float lastShootTime = 0f;
 
@@ -45,6 +49,8 @@ public class PlayerShooter : MonoBehaviour
     private void Shoot()
     {
         if (projectilePrefab == null || shootPoint == null) return;
+
+        onShoot.Invoke();
 
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation, projectileParent);
 
