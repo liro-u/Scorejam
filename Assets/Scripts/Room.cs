@@ -61,6 +61,7 @@ public class Room : MonoBehaviour
     public void StartRoom()
     {
         if (hasFinishRoom) return;
+        hasFinishRoom = true;
         StartCoroutine(StartRoomCoroutine());
     }
 
@@ -80,8 +81,6 @@ public class Room : MonoBehaviour
         Player.Instance.GetComponent<PlayerAnimatorSetter>().SetIsRolling(false);
         Player.Instance.GetComponent<PlayerInput>().enabled = true;
 
-        yield return new WaitForSeconds(2);
-
         Player.Instance.GetComponent<HealthSystem>().ProtectForXTime(5);
 
         onRoomStart.Invoke();
@@ -89,15 +88,13 @@ public class Room : MonoBehaviour
 
     public void FinishRoom()
     {
-        
         OpenAllDoor();
+        ScoreManager.Instance.AddRoomCompleted();
     }
 
     public void SummonEnemy()
     {
-        if (hasFinishRoom) return;
         EnemyParent.SummonRandomEnemies(numberEnemy);
-        hasFinishRoom = true;
     }
 
     public void FocusCamera()

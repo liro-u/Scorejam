@@ -17,7 +17,6 @@ public class CameraFollow : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void LateUpdate()
