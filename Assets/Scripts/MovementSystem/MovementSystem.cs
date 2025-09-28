@@ -30,10 +30,22 @@ public class MovementSystem : MonoBehaviour
         }
     }
     [SerializeField] private UnityEvent<bool> onMove;
+    [SerializeField] private bool disable = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         playerTransform = GetComponent<Transform>();
+    }
+
+    public void EnableMovement()
+    {
+        disable = false;
+    }
+
+    public void DisableMovement()
+    {
+        disable = true;
     }
 
     // Update is called once per frame
@@ -47,7 +59,9 @@ public class MovementSystem : MonoBehaviour
         {
             playerTransform.localScale = new Vector3(.7f, playerTransform.localScale.y, playerTransform.localScale.z);
         }
-            rb.linearVelocity = moveInput * moveSpeed;
+
+        if (disable) return;
+        rb.linearVelocity = moveInput * moveSpeed;
     }
 
 }

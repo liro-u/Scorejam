@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/USS/MainMenu.uss?fileID=7433441132597879392&amp;guid=28e5c34c0cdbac440b3a47c829be7d2a&amp;type=3#MainMenu" />
+    <ui:VisualElement name="Panel" class="panel" style="flex-grow: 1; background-color: rgba(255, 255, 255, 0); align-items: center; opacity: 1;">
+        <ui:VisualElement name="container" class="menu" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-items: center; width: 676px; justify-content: flex-start; height: 499px; align-content: auto; opacity: 1; flex-direction: column; background-size: 100% 100%; align-self: auto; top: 314px; display: flex;">
+            <ui:VisualElement style="flex-grow: 1; align-items: stretch; -unity-background-scale-mode: scale-to-fit; width: 395px; background-image: url(&quot;project://database/Assets/Visuals/UI/title.png?fileID=21300000&amp;guid=07891de5dbfe08842bc89b65d8efca85&amp;type=3#title&quot;); height: 130px;" />
+            <ui:Button text="START" class="button" style="opacity: 1; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LakkiReddy-Regular.ttf?fileID=12800000&amp;guid=774a9e7a3661c00419d47cdc4a81904a&amp;type=3#LakkiReddy-Regular&quot;); font-size: 32px; margin-right: 0; padding-top: 0; padding-bottom: 0; padding-right: 0; padding-left: 0; margin-left: 0; margin-top: 0; margin-bottom: 0;" />
+            <ui:Button text="QUIT" class="button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
