@@ -30,7 +30,10 @@ public class PlayerAudioControl : MonoBehaviour
                 break;
 
             case 1:
-                PlayRandomFromGroup(fireSounds);
+                if (Random.Range(0,11) < 5)
+                {
+                    PlayRandomFromGroup(fireSounds);
+                }
                 break;
 
             case 2:
