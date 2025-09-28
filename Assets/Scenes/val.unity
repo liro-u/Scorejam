@@ -1240,6 +1240,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 624106131136698698, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
   m_PrefabInstance: {fileID: 20317439555725494}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1550355811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3210195749254395812, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+  m_PrefabInstance: {fileID: 20317439555725494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb8e742124c5ec45a173b6132a11be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAudioControl
 --- !u!1001 &1553145256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1709,6 +1720,38 @@ PrefabInstance:
       propertyPath: projectileParent
       value: 
       objectReference: {fileID: 1318762}
+    - target: {fileID: 4045335375125802499, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+      propertyPath: onShoot.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045335375125802499, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+      propertyPath: onShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045335375125802499, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+      propertyPath: onShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1550355811}
+    - target: {fileID: 4045335375125802499, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+      propertyPath: onShoot.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045335375125802499, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+      propertyPath: onShoot.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayPlayerSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045335375125802499, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+      propertyPath: onShoot.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerAudioControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045335375125802499, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+      propertyPath: onShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4045335375125802499, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+      propertyPath: onShoot.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5819953976919525819, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 0
