@@ -29,15 +29,28 @@ public class MovementSystem : MonoBehaviour
         }
     }
     [SerializeField] private UnityEvent<bool> onMove;
+    [SerializeField] private bool disable = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
+    public void EnableMovement()
+    {
+        disable = false;
+    }
+
+    public void DisableMovement()
+    {
+        disable = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (disable) return;
         rb.linearVelocity = moveInput * moveSpeed;
     }
 
