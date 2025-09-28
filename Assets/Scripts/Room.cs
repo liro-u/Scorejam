@@ -70,6 +70,8 @@ public class Room : MonoBehaviour
 
         yield return new WaitForSeconds(2);
 
+
+        BonusManager.Instance.ChoseRandomBonus();
         Player.Instance.GetComponent<PlayerAnimatorSetter>().SetIsRolling(true);
         Player.Instance.GetComponent<PlayerInput>().enabled = false;
 
