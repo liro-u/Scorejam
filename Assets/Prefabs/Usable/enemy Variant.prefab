@@ -370,9 +370,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovementSystem
   moveSpeed: 5
   rb: {fileID: 4430348947650766767}
+  playerTransform: {fileID: 0}
   onMove:
     m_PersistentCalls:
       m_Calls: []
+  disable: 0
 --- !u!50 &4430348947650766767
 Rigidbody2D:
   serializedVersion: 5
@@ -511,6 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovementSystem
   moveSpeed: 5
   rb: {fileID: 4430348947650766767}
+  playerTransform: {fileID: 0}
   onMove:
     m_PersistentCalls:
       m_Calls:
@@ -526,6 +529,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  disable: 0
 --- !u!114 &4666408159510181085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -540,6 +544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   target: {fileID: 0}
   movementSystem: {fileID: 6912460270607425456}
+  enemyTransform: {fileID: 1718177279968713038}
 --- !u!195 &2618208354729089296
 NavMeshAgent:
   m_ObjectHideFlags: 0

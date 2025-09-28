@@ -8,6 +8,7 @@ public class TargetMovementController : MonoBehaviour
     private bool isDead = false;
 
     private NavMeshAgent agent;
+    [SerializeField] private Transform enemyTransform;
 
     void Start()
     {
@@ -33,5 +34,10 @@ public class TargetMovementController : MonoBehaviour
             moveInput.Normalize();
 
         movementSystem.MoveInput = moveInput;
-    }
+        if (moveInput.x < -0.01f)
+            enemyTransform.localScale = new Vector3(-1f, enemyTransform.localScale.y, enemyTransform.localScale.z);
+        else if (moveInput.x > 0.01f)
+            enemyTransform.localScale = new Vector3(1f, enemyTransform.localScale.y, enemyTransform.localScale.z);
+    
+}
 }
