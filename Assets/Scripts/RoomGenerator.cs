@@ -66,7 +66,7 @@ public class RoomGenerator : MonoBehaviour
 
             // Decide number of enemies
             int baseEnemyCount = enemyCounts[pos];
-            roomComp.numberEnemy = Mathf.Max(1, ChooseEnemyCount(baseEnemyCount));
+            roomComp.numberEnemy = Mathf.Min(Mathf.Max(1, ChooseEnemyCount(baseEnemyCount)), 7);
 
             roomGrid[pos] = roomComp;
 

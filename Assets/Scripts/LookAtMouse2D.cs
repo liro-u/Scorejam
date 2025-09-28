@@ -18,7 +18,6 @@ public class LookAtMouse2D : MonoBehaviour
 
         // Get mouse position in screen space
         Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
-        Debug.Log(mouseScreenPos);
 
         // Convert to world space
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
