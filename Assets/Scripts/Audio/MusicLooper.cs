@@ -5,49 +5,46 @@ public class MusicLooperSeamless : MonoBehaviour
     [Header("Music Clips")]
     [SerializeField] private AudioClip introClip;
     [SerializeField] private AudioClip loopClip;
+    [SerializeField]private AudioSource[] _audioSources;
 
-    private AudioSource introSource;
-    private AudioSource loopSource;
+    public double musicDuration;
+    public double goalTime;
+    public int audioToggle;
+    public bool introPlayed = false;
+    public AudioClip currentClip;
 
     private void Awake()
     {
-        // Create two audio sources: one for intro, one for loop
-        introSource = gameObject.AddComponent<AudioSource>();
-        loopSource = gameObject.AddComponent<AudioSource>();
-
-        introSource.playOnAwake = false;
-        loopSource.playOnAwake = false;
-
-        introSource.loop = false;
-        loopSource.loop = true;
+        currentClip = introClip;
+        goalTime = AudioSettings.dspTime + 0.5;
     }
 
-    private void Start()
+    private void Update()
     {
-        PlayIntroThenLoop();
-    }
-
-    public void PlayIntroThenLoop()
-    {
-        if (introClip == null || loopClip == null)
+        Debug.Log(AudioSettings.dspTime);
+        if(AudioSettings.dspTime > goalTime - 1)
         {
-            Debug.LogWarning("Intro or loop clip not assigned for MusicLooperSeamless.");
-            return;
+            PlayScheduledClip();
         }
-
-        // Play intro immediately
-        introSource.clip = introClip;
-        introSource.Play();
-
-        // Schedule loop to start when intro ends
-        double startTime = AudioSettings.dspTime + introClip.length;
-        loopSource.clip = loopClip;
-        loopSource.PlayScheduled(startTime);
     }
 
-    public void Stop()
+    private void PlayScheduledClip()
     {
-        introSource.Stop();
-        loopSource.Stop();
+        if (introPlayed && currentClip != loopClip)
+        {
+            currentClip = loopClip;
+        }
+        _audioSources[audioToggle].clip = currentClip;
+        _audioSources[audioToggle].PlayScheduled(goalTime);
+        musicDuration = CalcMusicDuration(currentClip);
+        goalTime += musicDuration;
+        audioToggle = 1 - audioToggle;
+        introPlayed = true;
     }
+
+    private double CalcMusicDuration(AudioClip audio)
+    {
+        return (double)currentClip.samples / currentClip.frequency;
+    }
+
 }
