@@ -814,7 +814,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 239315525311344697}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -965,6 +965,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
+  baseSpeed: 5
+  bonusSpeed: 10
   rb: {fileID: 2758936187011976005}
   playerTransform: {fileID: 4363817425574622085}
   onMove:
@@ -1058,7 +1060,11 @@ MonoBehaviour:
   shootPoint3: {fileID: 6350766218969709161}
   projectileParent: {fileID: 0}
   projectileSpeed: 10
+  projectilBaseSpeed: 10
+  projectilBonusSpeed: 20
   shootInterval: 0.5
+  shootIntervalBase: 0.5
+  shootIntervalBonus: 0.25
   onShoot:
     m_PersistentCalls:
       m_Calls: []
