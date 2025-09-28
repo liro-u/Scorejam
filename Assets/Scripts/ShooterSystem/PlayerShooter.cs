@@ -12,29 +12,33 @@ public class PlayerShooter : MonoBehaviour
     [SerializeField] private float projectileSpeed = 10f;
     [SerializeField] private float shootInterval = 0.5f;
 
-    private Coroutine shootingCoroutine;
+    private bool isShooting = false;
+    private float lastShootTime = 0f;
+
+    private void Update()
+    {
+        if (isShooting)
+        {
+            TryShoot();
+        }
+    }
 
     public void StartShooting()
     {
-        if (shootingCoroutine == null)
-            shootingCoroutine = StartCoroutine(ShootRoutine());
+        isShooting = true;
     }
 
     public void StopShooting()
     {
-        if (shootingCoroutine != null)
-        {
-            StopCoroutine(shootingCoroutine);
-            shootingCoroutine = null;
-        }
+        isShooting = false;
     }
 
-    private IEnumerator ShootRoutine()
+    public void TryShoot()
     {
-        while (true)
+        if (Time.time - lastShootTime >= shootInterval)
         {
             Shoot();
-            yield return new WaitForSeconds(shootInterval);
+            lastShootTime = Time.time;
         }
     }
 

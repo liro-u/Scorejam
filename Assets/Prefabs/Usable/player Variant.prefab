@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df600b8b5b0fc484f9cd0a57142fde86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  shootPoint: {fileID: 6393766403820123239}
 --- !u!1001 &6677372586722947997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -480,6 +481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 5
   rb: {fileID: 2758936187011976005}
+  playerTransform: {fileID: 4363817425574622085}
   onMove:
     m_PersistentCalls:
       m_Calls:
@@ -525,7 +527,19 @@ MonoBehaviour:
         m_CallState: 2
   onPerformed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4045335375125802499}
+        m_TargetAssemblyTypeName: PlayerShooter, Assembly-CSharp
+        m_MethodName: TryShoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onCanceled:
     m_PersistentCalls:
       m_Calls:
@@ -779,5 +793,10 @@ Transform:
 --- !u!95 &2068740110406774590 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4620533609146129571, guid: da83c65b96a494e44800675219813a2c, type: 3}
+  m_PrefabInstance: {fileID: 6677372586722947997}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4363817425574622085 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6928135117399752728, guid: da83c65b96a494e44800675219813a2c, type: 3}
   m_PrefabInstance: {fileID: 6677372586722947997}
   m_PrefabAsset: {fileID: 0}
