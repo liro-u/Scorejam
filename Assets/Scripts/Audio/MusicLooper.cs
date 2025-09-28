@@ -21,7 +21,6 @@ public class MusicLooperSeamless : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(AudioSettings.dspTime);
         if(AudioSettings.dspTime > goalTime - 1)
         {
             PlayScheduledClip();
