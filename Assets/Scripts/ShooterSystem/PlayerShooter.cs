@@ -11,7 +11,11 @@ public class PlayerShooter : MonoBehaviour
 
     [Header("Projectile Parameters")]
     [SerializeField] private float projectileSpeed = 10f;
+    [SerializeField] private float projectilBaseSpeed = 10f;
+    [SerializeField] private float projectilBonusSpeed = 20f;
     [SerializeField] private float shootInterval = 0.5f;
+    [SerializeField] private float shootIntervalBase = 0.5f;
+    [SerializeField] private float shootIntervalBonus = 0.25f;
 
 
     [SerializeField] private UnityEvent onShoot;
@@ -35,6 +39,20 @@ public class PlayerShooter : MonoBehaviour
     public void StopShooting()
     {
         isShooting = false;
+    }
+
+    public void AplyShootingBonus(int bonusType)
+    {
+        if(bonusType == (int)BonusType.AttackSpeedBoost)
+        {
+            shootInterval = shootIntervalBonus;
+            projectileSpeed = projectilBonusSpeed;
+        }
+        else
+        {
+            shootInterval = shootIntervalBase;
+            projectileSpeed = projectilBaseSpeed;
+        }
     }
 
     public void TryShoot()
