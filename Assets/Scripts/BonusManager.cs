@@ -42,6 +42,10 @@ public class BonusManager : MonoBehaviour
             case (int)BonusType.Points:
                 ScoreManager.Instance.AddScore(1000);
                 break;
+
+            case (int)BonusType.Heal:
+                Player.Instance.GetComponent<HealthSystem>().ApplyHealthModifier(1);
+                break;
         }
 
         onBonusChange.Invoke(bonusNumber);
