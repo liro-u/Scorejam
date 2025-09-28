@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 public class MovementSystem : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float baseSpeed = 5f;
+    [SerializeField] private float bonusSpeed = 10f;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform playerTransform;
     private Vector2 moveInput = Vector2.zero;
@@ -41,6 +43,18 @@ public class MovementSystem : MonoBehaviour
     public void DisableMovement()
     {
         disable = true;
+    }
+
+    public void aplySpeedBoost(int bonusType)
+    {
+        if (bonusType == (int)BonusType.SpeedBoost)
+        {
+            moveSpeed = bonusSpeed;
+        }
+        else
+        {
+            moveSpeed = baseSpeed;
+        }
     }
 
     // Update is called once per frame
