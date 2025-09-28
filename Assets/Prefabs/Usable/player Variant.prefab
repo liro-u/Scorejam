@@ -278,6 +278,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6915544196617487268, guid: da83c65b96a494e44800675219813a2c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3210195749254395812}
+    - targetCorrespondingSourceObject: {fileID: 6915544196617487268, guid: da83c65b96a494e44800675219813a2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7389654659073161253}
+    - targetCorrespondingSourceObject: {fileID: 6915544196617487268, guid: da83c65b96a494e44800675219813a2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4601180173564145850}
   m_SourcePrefab: {fileID: 100100000, guid: da83c65b96a494e44800675219813a2c, type: 3}
 --- !u!1 &239315525311344697 stripped
 GameObject:
@@ -572,6 +578,9 @@ MonoBehaviour:
   projectileParent: {fileID: 0}
   projectileSpeed: 10
   shootInterval: 0.5
+  onShoot:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &461269697779411887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,6 +633,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8263357359617274030}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: DisablePhysics
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7389654659073161253}
+        m_TargetAssemblyTypeName: WaitForCallBack, Assembly-CSharp
+        m_MethodName: StartCallbackCoRoutine
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -785,6 +806,46 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 032e9694a184fb048a0bcd6b6c455c59, type: 3}
   - {fileID: 8300000, guid: 52e3a24ac47d7984594fdb4299a67d24, type: 3}
   audioSrc: {fileID: 0}
+--- !u!114 &7389654659073161253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239315525311344697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2027a93f78fedd5478d6b0fd4172fb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaitForCallBack
+  waitFor: 3
+  callback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4601180173564145850}
+        m_TargetAssemblyTypeName: CallGameManager, Assembly-CSharp
+        m_MethodName: ShowLoseScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4601180173564145850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239315525311344697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ace537c7fae98e4ab1f2183ca336af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CallGameManager
 --- !u!4 &624106131136698698 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6053840402266893015, guid: da83c65b96a494e44800675219813a2c, type: 3}

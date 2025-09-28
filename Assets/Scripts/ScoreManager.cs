@@ -29,12 +29,14 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int points)
     {
         score += points;
+        GameManager.Instance.score = score;
         onScoreChanged?.Invoke(score);
     }
 
     public void ResetScore()
     {
         score = 0;
+        GameManager.Instance.score = score;
         onScoreChanged?.Invoke(score);
     }
 }
