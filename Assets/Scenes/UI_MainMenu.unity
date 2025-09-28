@@ -354,6 +354,7 @@ MonoBehaviour:
   winSceneName: UI_WinScreen
   loseSceneName: UI_EndScreen
   menuSceneName: UI_MainMenu
+  score: 0
 --- !u!4 &504646280
 Transform:
   m_ObjectHideFlags: 0
@@ -455,6 +456,10 @@ PrefabInstance:
     - target: {fileID: 2287778745967759560, guid: c197f91e66414884e84f366068b28d6b, type: 3}
       propertyPath: m_Name
       value: background
+      objectReference: {fileID: 0}
+    - target: {fileID: 2287778745967759560, guid: c197f91e66414884e84f366068b28d6b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3420573158222223914, guid: c197f91e66414884e84f366068b28d6b, type: 3}
       propertyPath: m_LocalPosition.x
