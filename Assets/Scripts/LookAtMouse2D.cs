@@ -3,12 +3,22 @@ using UnityEngine.InputSystem; // needed for Mouse.current
 
 public class LookAtMouse2D : MonoBehaviour
 {
+    [SerializeField] private Transform shootPoint;
+
+    private Vector3 originalLocalPos;
+
+    private void Start()
+    {
+        if (shootPoint != null)
+            originalLocalPos = shootPoint.localPosition;
+    }
     void Update()
     {
         if (Mouse.current == null) return; // no mouse detected
 
         // Get mouse position in screen space
         Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
+        Debug.Log(mouseScreenPos);
 
         // Convert to world space
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
@@ -22,5 +32,10 @@ public class LookAtMouse2D : MonoBehaviour
 
         // Apply rotation
         transform.rotation = Quaternion.Euler(0, 0, angle);
+        if (shootPoint != null)
+        {
+            shootPoint.localPosition = originalLocalPos;
+        }
+        
     }
 }
