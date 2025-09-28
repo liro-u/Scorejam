@@ -15,6 +15,9 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private UnityEvent<float> healthDecrease;
     [SerializeField] private UnityEvent<bool> healthEmpty;
 
+    [SerializeField] private UnityEvent<bool> onProtection;
+    [SerializeField] private UnityEvent<bool> onUnprotected;
+
     public float CurrentHealth { get; private set; }
 
     private float invincibilityTimer = 0f;
@@ -27,6 +30,8 @@ public class HealthSystem : MonoBehaviour
 
     private void Update()
     {
+        bool wasProtected = invincibilityTimer > 0f || protectForTimer > 0f;
+
         // Count down invincibility timer if active
         if (invincibilityTimer > 0f)
         {
@@ -38,6 +43,20 @@ public class HealthSystem : MonoBehaviour
         {
             protectForTimer -= Time.deltaTime;
         }
+
+        bool isProtected = invincibilityTimer > 0f || protectForTimer > 0f;
+
+        if (isProtected != wasProtected)
+        {
+            if (isProtected)
+            {
+                onProtection.Invoke(true);
+            }
+            else
+            {
+                onUnprotected.Invoke(true);
+            }
+        }
     }
 
     public void ProtectForXTime(float protectDuration)
@@ -46,6 +65,7 @@ public class HealthSystem : MonoBehaviour
         if (protectDuration > 0f)
         {
             protectForTimer = protectDuration;
+            onProtection.Invoke(true);
         }
     }
 
@@ -77,6 +97,7 @@ public class HealthSystem : MonoBehaviour
                 if (invincibilityDuration > 0f)
                 {
                     invincibilityTimer = invincibilityDuration;
+                    onProtection.Invoke(true);
                 }
             }
 
