@@ -775,7 +775,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   onBonusChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1550355818}
+        m_TargetAssemblyTypeName: PlayerShooter, Assembly-CSharp
+        m_MethodName: CheckForBonus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1550355820}
+        m_TargetAssemblyTypeName: MovementSystem, Assembly-CSharp
+        m_MethodName: aplySpeedBoost
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1455336137
 Transform:
   m_ObjectHideFlags: 0
@@ -960,6 +984,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb8e742124c5ec45a173b6132a11be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAudioControl
+--- !u!114 &1550355818 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4045335375125802499, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+  m_PrefabInstance: {fileID: 20317439555725494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 664b98d3d9fbe764a89d8827c79c7469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerShooter
+--- !u!114 &1550355820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1581241093793306749, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
+  m_PrefabInstance: {fileID: 20317439555725494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108f785627f8ad942abe0cdc2650cea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!1001 &1553145256
 PrefabInstance:
   m_ObjectHideFlags: 0

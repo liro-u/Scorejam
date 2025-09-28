@@ -7,6 +7,8 @@ public class PlayerShooter : MonoBehaviour
     [Header("Projectile Settings")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootPoint;
+    [SerializeField] private Transform shootPoint2;
+    [SerializeField] private Transform shootPoint3;
     [SerializeField] private Transform projectileParent;
 
     [Header("Projectile Parameters")]
@@ -22,6 +24,14 @@ public class PlayerShooter : MonoBehaviour
     
     private bool isShooting = false;
     private float lastShootTime = 0f;
+
+    private bool useBonus = false;
+
+
+    public void CheckForBonus(int bonusType)
+    {
+        useBonus = (bonusType == (int)BonusType.Shotgun);
+    }
 
     private void Update()
     {
@@ -70,7 +80,18 @@ public class PlayerShooter : MonoBehaviour
 
         onShoot.Invoke();
 
-        GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, shootPoint.rotation, projectileParent);
+        shootFromPoint(shootPoint);
+
+        if (useBonus)
+        {
+            shootFromPoint(shootPoint2);
+            shootFromPoint(shootPoint3);
+        }
+    }
+
+    private void shootFromPoint(Transform point)
+    {
+        GameObject projectile = Instantiate(projectilePrefab, point.position, shootPoint.rotation, projectileParent);
 
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         if (rb != null)

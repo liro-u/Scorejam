@@ -52,6 +52,37 @@ MonoBehaviour:
   hp1: {fileID: 3695797997925676368}
   hp2: {fileID: 7359850754083696559}
   hp3: {fileID: 1444308594467965543}
+--- !u!1 &394478354915232203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6350766218969709161}
+  m_Layer: 0
+  m_Name: ShootPoint (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6350766218969709161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394478354915232203}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.13952795, w: 0.99021816}
+  m_LocalPosition: {x: 1.097, y: -0.548, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7157837201463751612}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -16.041}
 --- !u!1 &1444308594467965543
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +358,7 @@ GameObject:
   m_Layer: 0
   m_Name: ShootPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -377,6 +408,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6393766403820123239}
+  - {fileID: 86074290373297846}
+  - {fileID: 6350766218969709161}
   m_Father: {fileID: 624106131136698698}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8363482711853484158
@@ -482,6 +515,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &5868151599963302145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 86074290373297846}
+  m_Layer: 0
+  m_Name: ShootPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &86074290373297846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5868151599963302145}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.18712239, w: 0.98233664}
+  m_LocalPosition: {x: 1.074, y: 0.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7157837201463751612}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 21.57}
 --- !u!1 &7359850754083696559
 GameObject:
   m_ObjectHideFlags: 0
@@ -990,6 +1054,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShooter
   projectilePrefab: {fileID: 970132158778599629, guid: 11f2644f7a4466745bddc83f7104715a, type: 3}
   shootPoint: {fileID: 6393766403820123239}
+  shootPoint2: {fileID: 86074290373297846}
+  shootPoint3: {fileID: 6350766218969709161}
   projectileParent: {fileID: 0}
   projectileSpeed: 10
   shootInterval: 0.5
