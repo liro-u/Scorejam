@@ -1158,30 +1158,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    - target: {fileID: 461269697779411887, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
-      propertyPath: healthChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 461269697779411887, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
-      propertyPath: healthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 461269697779411887, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
-      propertyPath: healthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 461269697779411887, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
-      propertyPath: healthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetLabel
-      objectReference: {fileID: 0}
-    - target: {fileID: 461269697779411887, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
-      propertyPath: healthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SetUILabel, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 461269697779411887, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
-      propertyPath: healthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 624106131136698698, guid: 88284457901dbb1478c0c7d93b4b57f5, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
