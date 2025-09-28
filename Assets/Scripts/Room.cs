@@ -5,12 +5,12 @@ using UnityEngine.Events;
 
 public class Room : MonoBehaviour
 {
-    [SerializeField] private bool canGoUp = true;
-    [SerializeField] private bool canGoDown = false;
-    [SerializeField] private bool canGoLeft = false;
-    [SerializeField] private bool canGoRight = false;
+    [SerializeField] public bool canGoUp = true;
+    [SerializeField] public bool canGoDown = false;
+    [SerializeField] public bool canGoLeft = false;
+    [SerializeField] public bool canGoRight = false;
 
-    [SerializeField] private int numberEnemy = 1;
+    [SerializeField] public int numberEnemy = 1;
 
     [SerializeField] private Door leftDoor;
     [SerializeField] private Door rightDoor;
@@ -19,7 +19,7 @@ public class Room : MonoBehaviour
 
     [SerializeField] private EnemyParent EnemyParent;
 
-    [SerializeField] private bool hasFinishRoom = false;
+    [SerializeField] public bool hasFinishRoom = false;
 
     [SerializeField] private UnityEvent onRoomStart;
 
