@@ -65,11 +65,12 @@ public class Room : MonoBehaviour
     {
         
         OpenAllDoor();
-        hasFinishRoom = true;
     }
 
     public void SummonEnemy()
     {
+        if (hasFinishRoom) return;
         EnemyParent.SummonRandomEnemies(numberEnemy);
+        hasFinishRoom = true;
     }
 }
