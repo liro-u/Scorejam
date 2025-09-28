@@ -2,6 +2,9 @@
 }
 
 .menu {
+    align-items: center;
+    width: 437px;
+    min-height: 533px;
     background-color: rgb(0, 0, 0);
 }
 
