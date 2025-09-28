@@ -10,12 +10,14 @@ public class Room : MonoBehaviour
     [SerializeField] private bool canGoLeft = false;
     [SerializeField] private bool canGoRight = false;
 
+    [SerializeField] private int numberEnemy = 1;
+
     [SerializeField] private Door leftDoor;
     [SerializeField] private Door rightDoor;
     [SerializeField] private Door topDoor;
     [SerializeField] private Door BottomDoor;
 
-    [SerializeField] private GameObject EnemyParent;
+    [SerializeField] private EnemyParent EnemyParent;
 
     [SerializeField] private bool hasFinishRoom = false;
 
@@ -26,8 +28,6 @@ public class Room : MonoBehaviour
         SummonAllDoor();
 
         OpenAllDoor();
-
-        EnemyParent.SetActive(false);
     }
 
     public void SummonAllDoor()
@@ -70,6 +70,6 @@ public class Room : MonoBehaviour
 
     public void SummonEnemy()
     {
-        EnemyParent.SetActive(true);
+        EnemyParent.SummonRandomEnemies(numberEnemy);
     }
 }

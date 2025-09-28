@@ -3,8 +3,24 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance { get; private set; }
+
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private PlayerInput pi;
+
+    private void Awake()
+    {
+        // Singleton setup
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // évite les doublons
+            return;
+        }
+        Instance = this;
+
+        // Optionnel : garder le player entre les scènes
+        // DontDestroyOnLoad(gameObject);
+    }
 
     public void DisablePhysics()
     {
@@ -21,6 +37,4 @@ public class Player : MonoBehaviour
         rb.simulated = true;
         pi.enabled = true;
     }
-
-    
 }

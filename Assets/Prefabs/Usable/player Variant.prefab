@@ -271,6 +271,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6915544196617487268, guid: da83c65b96a494e44800675219813a2c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8263357359617274030}
+    - targetCorrespondingSourceObject: {fileID: 6915544196617487268, guid: da83c65b96a494e44800675219813a2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4584663327765490076}
+    - targetCorrespondingSourceObject: {fileID: 6915544196617487268, guid: da83c65b96a494e44800675219813a2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3210195749254395812}
   m_SourcePrefab: {fileID: 100100000, guid: da83c65b96a494e44800675219813a2c, type: 3}
 --- !u!1 &239315525311344697 stripped
 GameObject:
@@ -640,6 +646,131 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   rb: {fileID: 2758936187011976005}
   pi: {fileID: 5578503912161095431}
+--- !u!82 &4584663327765490076
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239315525311344697}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -7471584489119236426, guid: 319e33e2d2fd6014dbfb91208c5ec21e, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &3210195749254395812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239315525311344697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb8e742124c5ec45a173b6132a11be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAudioControl
+  hurtSounds:
+  - {fileID: 8300000, guid: 1ae1150c836ebbd4f93c446ab98ad7c3, type: 3}
+  - {fileID: 8300000, guid: eb5d398bf8bad174bb8a2215e79a3fb6, type: 3}
+  fireSounds:
+  - {fileID: 8300000, guid: f844b85582247a145b082fa0427f742d, type: 3}
+  - {fileID: 8300000, guid: 3f907436b23786c46b0899ad8ce161f4, type: 3}
+  - {fileID: 8300000, guid: 3b0efa38c33a1334e8b03bc57c69fbce, type: 3}
+  victorySounds:
+  - {fileID: 8300000, guid: 6af6123ed5719984e8496500af329fac, type: 3}
+  - {fileID: 8300000, guid: 98ad0a30512b99d4d8a40869b644bdee, type: 3}
+  - {fileID: 8300000, guid: 8af3e351961c6b14990b6c3f39a1ba57, type: 3}
+  - {fileID: 8300000, guid: a01be44d63df50f4c8b54c5e03ffe1ef, type: 3}
+  walkSounds:
+  - {fileID: 8300000, guid: 032e9694a184fb048a0bcd6b6c455c59, type: 3}
+  - {fileID: 8300000, guid: 52e3a24ac47d7984594fdb4299a67d24, type: 3}
+  audioSrc: {fileID: 0}
 --- !u!4 &624106131136698698 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6053840402266893015, guid: da83c65b96a494e44800675219813a2c, type: 3}

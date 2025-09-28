@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class TargetMovementController : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    public Transform target;
     [SerializeField] private MovementSystem movementSystem;
     private bool isDead = false;
 
