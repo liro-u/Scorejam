@@ -139,6 +139,8 @@ MonoBehaviour:
   label: {fileID: 230495105}
   prefix: 'Score : '
   sufix: 
+  fadeDuration: 1
+  visibleDuration: 1
 --- !u!114 &230495105 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6992019875747398945, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
@@ -150,6 +152,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &230495106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230495102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b1a2801def57df4e8489a080f5ea274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FInalScoreDisplay
 --- !u!1 &1309657035
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +255,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -8802107192596735468, guid: d6ede06d57150204684e404ec8b0d761, type: 3}
+    - target: {fileID: 1756150173037161424, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756150173037161424, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756150173037161424, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 720
+      objectReference: {fileID: 0}
     - target: {fileID: 1967447429908335652, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -543
@@ -392,18 +418,18 @@ PrefabInstance:
     - target: {fileID: 5808095642332570912, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1810682745}
+      objectReference: {fileID: 4888993918132138412, guid: 51f404f02ad559a4980c6d8f6185a3be, type: 3}
     - target: {fileID: 5808095642332570912, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5808095642332570912, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: OpenMenuScreen
       objectReference: {fileID: 0}
     - target: {fileID: 5808095642332570912, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CallGameManager, Assembly-CSharp
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5808095642332570912, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -462,7 +488,8 @@ PrefabInstance:
       value: 4278190080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3542234065682143196, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6459972086648940046, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
@@ -471,6 +498,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6724240274129010553, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 230495104}
+    - targetCorrespondingSourceObject: {fileID: 6724240274129010553, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 230495106}
   m_SourcePrefab: {fileID: 100100000, guid: 7bbacfec214a91842a3ac4c4e3941efb, type: 3}
 --- !u!1 &1810682744 stripped
 GameObject:

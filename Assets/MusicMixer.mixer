@@ -37,6 +37,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-1508948321000527850
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Rage Music
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 5c6c76dce5477e3468e8cd91fbcb707a
+  m_Children: []
+  m_Volume: e7907a6e11cb8354c9ec1a04c98c4ef6
+  m_Pitch: 06af2220ced2e434a8f354cf1c667dab
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 8819073720498820920}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-1308987001039049169
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -80,6 +99,7 @@ AudioMixerController:
     - 314415040b5dd4140bca536095576b69
     - f52d07927caface4eb05419c5a253cf9
     - 37609549f198c324faf968cca03c89cc
+    - 5c6c76dce5477e3468e8cd91fbcb707a
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -95,6 +115,7 @@ AudioMixerGroupController:
   m_Children:
   - {fileID: -7471584489119236426}
   - {fileID: 1813973342057490187}
+  - {fileID: -1508948321000527850}
   m_Volume: 671b08f609b02bc4b87e65c67648bdae
   m_Pitch: 0fe021b1e3caa824190a712d8e67c2ea
   m_Send: 00000000000000000000000000000000
@@ -181,6 +202,20 @@ AudioMixerEffectController:
   m_EffectID: 99dae12fd92a1f04784f7c0212cf2eaf
   m_EffectName: Attenuation
   m_MixLevel: f4f1b0c5a3891fb4f97c2963071f0cc4
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &8819073720498820920
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 5b884187b5cd08046a532d684924175d
+  m_EffectName: Attenuation
+  m_MixLevel: c453b8a90ca0b234f8003dead8aecd3c
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0

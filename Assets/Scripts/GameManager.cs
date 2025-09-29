@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private string winSceneName = "UI_WinScreen"; 
     [SerializeField] private string loseSceneName = "UI_EndScreen"; 
     [SerializeField] private string menuSceneName = "UI_MainMenu";
-
+    [SerializeField] private string leaderboardSceneName = "UI_Leaderboard";
     public int score = 0;
 
     private void Awake()
@@ -65,6 +65,18 @@ public class GameManager : MonoBehaviour
         if (!string.IsNullOrEmpty(menuSceneName))
         {
             SceneManager.LoadScene(menuSceneName);
+        }
+        else
+        {
+            Debug.LogError("Game scene name is not set in GameManager!");
+        }
+    }
+
+    public void OpenLeaderboardScreen()
+    {
+        if (!string.IsNullOrEmpty(leaderboardSceneName))
+        {
+            SceneManager.LoadScene(leaderboardSceneName);
         }
         else
         {

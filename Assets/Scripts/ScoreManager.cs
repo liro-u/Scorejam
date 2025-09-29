@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private UnityEvent<float> onRoomCompletedChanged;
     [SerializeField] private int roomToWin = 10;
 
+    private ScoreClass player = new ScoreClass();
     public int Score => score;
     public int RoomCompleted => roomCompleted;
     public ScoreChangedEvent OnScoreChanged => onScoreChanged;
@@ -27,7 +28,7 @@ public class ScoreManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        player.player = PlayerPrefs.GetString("playerName");
         Instance = this;
     }
 
@@ -53,6 +54,13 @@ public class ScoreManager : MonoBehaviour
         {
             StartCoroutine(WinCoroutine());
         }
+    }
+
+    public void UploadScore()
+    {
+        player.score = score;
+        GetComponent<PlayerPrefsConfig>().SetRunScore(score);
+        GetComponent<APIHandler>().PostScore(player);
     }
 
     private IEnumerator WinCoroutine()
