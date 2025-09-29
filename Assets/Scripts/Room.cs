@@ -101,4 +101,5 @@ public class Room : MonoBehaviour
     {
         CameraFollow.Instance.SetTarget(CameraTarget);
     }
+
 }

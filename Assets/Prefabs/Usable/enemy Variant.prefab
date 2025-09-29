@@ -91,9 +91,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1718177279968713038}
     m_Modifications:
+    - target: {fileID: 1206535616798324079, guid: d1aa89e5dc7d03e4da62ffe3d6d34344, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1512754517309469162, guid: d1aa89e5dc7d03e4da62ffe3d6d34344, type: 3}
       propertyPath: m_Name
       value: PlayerDamager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1512754517309469162, guid: d1aa89e5dc7d03e4da62ffe3d6d34344, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2765382744196624595, guid: d1aa89e5dc7d03e4da62ffe3d6d34344, type: 3}
       propertyPath: damage
@@ -235,6 +243,10 @@ PrefabInstance:
     - target: {fileID: 2015353102022623429, guid: 53186c237d62d324086825c4abb38343, type: 3}
       propertyPath: m_Name
       value: enemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2015353102022623429, guid: 53186c237d62d324086825c4abb38343, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5921440087930113176, guid: 53186c237d62d324086825c4abb38343, type: 3}
       propertyPath: m_Color.b
@@ -382,6 +394,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementSystem
   moveSpeed: 5
+  baseSpeed: 5
+  bonusSpeed: 10
   rb: {fileID: 4430348947650766767}
   playerTransform: {fileID: 0}
   onMove:
@@ -428,6 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   maxHealth: 100
+  invincibilityDuration: 0
   healthChanged:
     m_PersistentCalls:
       m_Calls:
@@ -524,6 +539,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onProtection:
+    m_PersistentCalls:
+      m_Calls: []
+  onUnprotected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3039402641954791851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,6 +570,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementSystem
   moveSpeed: 5
+  baseSpeed: 5
+  bonusSpeed: 10
   rb: {fileID: 4430348947650766767}
   playerTransform: {fileID: 0}
   onMove:
