@@ -67,7 +67,7 @@ public class ScoreManager : MonoBehaviour
     {
         Player.Instance.GetComponent<PlayerAnimatorSetter>().SetIsWining(true);
         Player.Instance.GetComponent<PlayerInput>().enabled = false;
-
+        UploadScore();
         yield return new WaitForSeconds(2);
 
         GameManager.Instance.OpenWinScreen();
