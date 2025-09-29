@@ -22,6 +22,8 @@ public class BonusManager : MonoBehaviour
     private AudioSource thisAS;
     private int bonusNumber = 0;
 
+    public int BonusNumber  => bonusNumber;
+
     [SerializeField] private UnityEvent<int> onBonusChange;
 
     private void Awake()
